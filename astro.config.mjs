@@ -26,5 +26,6 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
-  site: "(https://drojasra-33.github.io/drojasra-33/)",
+  base: "/drojasra-33",
+  site: "https://drojasra-33.github.io/drojasra-33/",
 });
