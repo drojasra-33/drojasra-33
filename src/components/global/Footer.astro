@@ -1,0 +1,54 @@
+---
+// components
+import Container from "../elements/Container.astro";
+import Heading from "../elements/Heading.astro";
+import Text from "../elements/Text.astro";
+import Link from "../elements/Link.astro";
+
+// links
+const socials = [
+  { title: "LinkedIn", href: "https://www.linkedin.com/in/daniel-rojas-rojas-074802189/" },
+  { title: "Github", href: "https://github.com/drojasra-33?tab=repositories" },
+  { title: "Notion", href: "https://www.notion.so/Project-Portfolio-Daniel-Rojas-Rojas-0face0db7f3741d0803998015092bd98" }
+];
+
+const navigation = [
+  { title: "Home", href: "/" },
+  { title: "Works", href: "/works" },
+  { title: "About", href: "/about" },
+  { title: "Contact", href: "/contact" }
+];
+---
+
+<Container variant={'xl'} class="mt-32 pb-8">
+  <div class="flex flex-col gap-10 md:flex-row">
+    <div class="flex-1 md:text-left text-center">
+      <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-5">Socials</Heading>
+      <ul>
+        {
+          socials.map((social) => (
+            <li><Link variant={'nav'} href={social.href}>{social.title}</Link></li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="flex-1 md:text-right text-center">
+      <Heading tagName="h3" tagSize="h4" class="text-base-900 mb-5">Navigation</Heading>
+      <ul>
+        {
+          navigation.map((navLink) => (
+            <li>
+              <Link variant={'nav'} href={navLink.href}>{navLink.title}</Link>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+
+  <div class="flex flex-col text-center mt-20 border-t border-base-200 pt-8">
+    <Text variant={'sm'} class="text-base-900">Daniel Rojas Rojas © 2026 All Rights Reserved</Text>
+    <Text variant={'sm'} class="text-base-500 mt-2">Built with Astro</Text>
+  </div>
+</Container>

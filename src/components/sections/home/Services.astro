@@ -1,0 +1,42 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import Heading from "../../elements/Heading.astro";
+import Dropdown from "../../elements/Dropdown.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+
+// content
+const services = [
+  {
+    title: "Project Management",
+    description: "Managing project lifecycles with Agile and Waterfall methodologies to ensure timely delivery and team efficiency."
+  },
+  {
+    title: "SLA Compliance",
+    description: "Maintaining high-quality service standards with a consistent record of 95% SLA fulfillment for global contracts."
+  },
+  {
+    title: "Data Analysis",
+    description: "Developing Power BI and SQL dashboards for critical metric visualization and strategic decision-making."
+  },
+  {
+    title: "Operational Excellence",
+    description: "Optimizing operational processes and service delivery to maximize productivity and drive cost-effectiveness."
+  }
+];
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">Services</Heading>
+    <div class="flex flex-col gap-4">
+        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
+            {
+                services.map((service, index) => (
+                    <Dropdown title=`${index + 1}. ${service.title}` text={service.description} />  
+                ))
+            }       
+        </Container>
+        <ContainerBottom />    
+    </div>
+
+</Container>

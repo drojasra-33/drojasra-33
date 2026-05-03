@@ -1,0 +1,46 @@
+---
+// components
+import Container from "../../elements/Container.astro";
+import ContainerBottom from "../../elements/ContainerBottom.astro";
+import Heading from "../../elements/Heading.astro";
+import Dropdown from "../../elements/Dropdown.astro";
+
+// content
+const faqs = [
+  {
+    question: "What is your project management methodology?",
+    answer: "I primarily utilize Agile and Scrum for flexibility and iterative progress, but I am also experienced in Waterfall for projects requiring strict sequential phases and defined milestones."
+  },
+  {
+    question: "How do you ensure SLA compliance in high-volume environments?",
+    answer: "Through rigorous monitoring of KPIs and real-time data analysis. At HP, I managed up to 200 cases monthly while maintaining a 95% SLA compliance rate by optimizing workflows."
+  },
+  {
+    question: "Which tools do you use for data-driven decision-making?",
+    answer: "I leverage Power BI, SQL, and Advanced Excel to create dashboards that provide visibility into operational performance and service trends."
+  },
+  {
+    question: "Do you have experience working with cross-functional teams?",
+    answer: "Yes, I have extensive experience collaborating with technical, sales, and operations departments to bridge communication gaps and ensure scalable solutions."
+  },
+  {
+    question: "Are you available for remote or hybrid collaboration?",
+    answer: "Absolutely. I am fully equipped to work in remote or hybrid environments, utilizing tools like Microsoft Teams, Slack, and ServiceNow for seamless global coordination."
+  }
+];
+---
+
+<Container variant={'md'}>
+    <Heading tagName="h2" tagSize="h2" class="text-center">FAQ</Heading>
+    <div class="flex flex-col gap-4">
+        <Container class="flex flex-col gap-4 p-6 border-3 border-base-900">
+            {
+                faqs.map((q, index) => (
+                    <Dropdown title=`${index + 1}. ${q.question}`  text={q.answer} />
+                ))
+            }
+        </Container>
+        <ContainerBottom />        
+    </div>
+    
+</Container>
