@@ -26,5 +26,5 @@ export default defineConfig({
   },
 
   integrations: [sitemap()],
-  site: "https://drojasra-33.github.io/grunge-main/",
+  site: "(https://drojasra-33.github.io/drojasra-33/)",
 });
