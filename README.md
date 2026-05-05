@@ -36,6 +36,7 @@ If you have any questions, feel free to reach out:
 
 Inside of your template, you'll see the following folders and files:
 
+---
 /
 ├── public/
 │   └── favicon.svg
